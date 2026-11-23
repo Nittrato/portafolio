@@ -1,7 +1,9 @@
 export default function HomePage() {
   return (
-    <section className="space-y-6">
-      <h1>Home page</h1>
-    </section>
+    <main className="flex w-full bg-fondo2 border-2 border-border rounded-rounded ">
+      <div className="m-auto">
+        <h1 className="text-3xl">Home page</h1>
+      </div>
+    </main>
   );
 }

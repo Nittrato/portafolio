@@ -14,14 +14,14 @@ interface Tab {
 const TABS: Tab[] = [
   { name: "Home", href: "/home", icon: Home2 },
   { name: "Explorar", href: "/explorar", icon: Discover },
-  { name: "Setting", href: "/perfil", icon: Profile },
+  { name: "Perfil", href: "/perfil", icon: Profile },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col gap-5 p-5 bg-fondo2 rounded-rounded border border-border">
+    <nav className="flex flex-col gap-5 p-5 bg-fondo2 rounded-rounded border-2 border-border">
       {TABS.map((tab) => {
         const isActive =
           pathname === tab.href ||
