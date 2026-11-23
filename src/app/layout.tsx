@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className="flex flex-row h-screen p-screen gap-screen bg-fondo text-primario">
+    <html lang="es" className="scroll-smooth">
+      <body className="flex flex-row h-screen p-screen gap-screen bg-fondo text-primario overflow-hidden">
         <Navbar />
         {children}
       </body>

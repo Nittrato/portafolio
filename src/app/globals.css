@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
 
-
-
 body {
     font-family:
         system-ui,
@@ -14,4 +12,13 @@ body {
         Ubuntu,
         Cantarell,
         sans-serif;
+}
+
+/* Ocultar barra de scroll pero mantener funcionalidad */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

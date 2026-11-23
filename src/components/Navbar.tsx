@@ -1,45 +1,101 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
-import { Home2, Discover, Profile, type Icon } from "iconsax-reactjs";
 
-interface Tab {
+export interface Tab {
+  id: string;
   name: string;
   href: string;
-  icon: Icon;
 }
 
-const TABS: Tab[] = [
-  { name: "Home", href: "/home", icon: Home2 },
-  { name: "Explorar", href: "/explorar", icon: Discover },
-  { name: "Perfil", href: "/perfil", icon: Profile },
+export const TABS: Tab[] = [
+  { id: "home", name: "Home", href: "#home" },
+  { id: "explorar", name: "Explorar", href: "#explorar"},
+  { id: "perfil", name: "Perfil", href: "#perfil"},
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
+  const [activeTab, setActiveTab] = useState("home");
+  const activeTabRef = useRef("home");
+
+  useEffect(() => {
+    activeTabRef.current = activeTab;
+  }, [activeTab]);
+
+  // Detectar la sección visible al hacer scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveTab(entry.target.id);
+          }
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    TABS.forEach((tab) => {
+      const el = document.getElementById(tab.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Navegar entre secciones con la rueda del ratón
+  useEffect(() => {
+    let isScrolling = false;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (isScrolling || Math.abs(e.deltaY) < 20) return;
+
+      const currentIndex = TABS.findIndex((t) => t.id === activeTabRef.current);
+      if (currentIndex === -1) return;
+
+      const nextIndex = e.deltaY > 0 ? currentIndex + 1 : currentIndex - 1;
+      if (nextIndex >= 0 && nextIndex < TABS.length) {
+        e.preventDefault();
+        isScrolling = true;
+
+        const nextId = TABS[nextIndex].id;
+        document.getElementById(nextId)?.scrollIntoView({ behavior: "smooth" });
+        setActiveTab(nextId);
+
+        setTimeout(() => {
+          isScrolling = false;
+        }, 600);
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => window.removeEventListener("wheel", handleWheel);
+  }, []);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setActiveTab(id);
+  };
 
   return (
-    <nav className="flex flex-col gap-5 p-5 bg-fondo2 rounded-rounded border-2 border-border">
+    <nav className="flex flex-col gap-5 p-5 bg-fondo2 rounded-rounded border-2 border-border shrink-0">
       {TABS.map((tab) => {
-        const isActive =
-          pathname === tab.href ||
-          (tab.href === "/home" && (pathname === "/" || pathname === ""));
-
-        const IconComponent = tab.icon;
+        const isActive = activeTab === tab.id;
 
         return (
-          <Link
-            key={tab.href}
+          <a
+            key={tab.id}
             href={tab.href}
-            className={`relative flex items-center gap-3 p-4 rounded-rounded2 w-50 transition-colors duration-200 ${
+            onClick={(e) => handleClick(e, tab.id)}
+            className={`relative flex items-center gap-3 p-4 rounded-rounded2 w-50 transition-colors duration-200 cursor-pointer ${
               isActive
                 ? "text-fondo2 font-semibold"
                 : "text-segundario hover:text-primario hover:bg-primario/10"
             }`}
           >
-            {/* Fondo activo deslizante */}
+            {/* Indicador activo con Motion */}
             {isActive && (
               <motion.div
                 layoutId="active-nav-indicator"
@@ -52,16 +108,10 @@ export function Navbar() {
               />
             )}
 
-            {/* Contenido con z-10 para que quede por encima del fondo blanco */}
-            <span className="relative z-10 flex items-center justify-center">
-              <IconComponent
-                size={24}
-                variant={isActive ? "Bold" : "Linear"}
-              />
-            </span>
+            
 
             <p className="relative z-10 font-medium">{tab.name}</p>
-          </Link>
+          </a>
         );
       })}
     </nav>
