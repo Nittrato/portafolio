@@ -1,3 +1,5 @@
 export { default as Home } from "./Home";
-export { default as Explorar } from "./Explorar";
-export { default as Perfil } from "./Perfil";
+export { default as ProyectoSection } from "./ProyectoSection";
+export { default as Doc } from "./Doc";
+export { default as Contacto } from "./Contacto";
+

@@ -2,10 +2,10 @@
 
 import { motion } from "motion/react";
 
-export default function Explorar() {
+export default function Contacto() {
   return (
     <section
-      id="explorar"
+      id="contacto"
       className="h-full w-full snap-start snap-always shrink-0 flex"
     >
       <motion.main
@@ -16,7 +16,7 @@ export default function Explorar() {
         className="flex w-full h-full bg-fondo2 border-2 border-border rounded-rounded"
       >
         <div className="m-auto">
-          <h1 className="text-3xl">Explorer page</h1>
+          <h1 className="text-3xl">Contacto page</h1>
         </div>
       </motion.main>
     </section>

@@ -13,7 +13,14 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 0.5 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="flex w-full h-full bg-fondo2 border-2 border-border rounded-rounded"
+        className="flex w-full h-full border-2
+ border-border rounded-rounded"
+        style={{
+          backgroundImage: "url('/wall.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="m-auto">
           <h1 className="text-3xl">Home page</h1>

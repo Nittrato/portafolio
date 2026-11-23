@@ -1,4 +1,5 @@
-import { Home, Explorar, Perfil } from "@/app/sections";
+import { Home, Doc, Contacto, ProyectoSection } from "@/app/sections";
+import { proyecto } from "@/lib/data";
 
 export default function Page() {
   return (
@@ -7,8 +8,12 @@ export default function Page() {
       className="flex flex-col flex-1 h-full overflow-y-auto snap-y snap-mandatory scroll-smooth no-scrollbar gap-screen"
     >
       <Home />
-      <Explorar />
-      <Perfil />
+      
+      {proyecto.map((item) => (
+        <ProyectoSection key={item.id} project={item} />
+      ))}
+      <Doc />
+      <Contacto />
     </main>
   );
 }
