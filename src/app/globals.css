@@ -16,3 +16,7 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+.anim {
+    @apply transition-all duration-200 ease-out hover:-translate-y-1 cursor-pointer;
+}

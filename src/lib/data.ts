@@ -89,3 +89,36 @@ export const githubHistory = [
     },
 
 ]
+
+export const skill = [
+    {
+        id: "1",
+        name: "react",
+        definicion: "Es una libreria de javascript para crear interfaces de usuario"
+    },
+    {
+        id: "2",
+        name: "typescript",
+        definicion: "Es un lenguaje de programacion que es un superconjunto de javascript"
+    },
+    {
+        id: "3",
+        name: "next js",
+        definicion: "Es un framework de react para crear aplicaciones web"
+    },
+    {
+        id: "4",
+        name: "sqlite",
+        definicion: "Es un lenguaje de programacion para gestionar bases de datos"
+    },
+    {
+        id: "5",
+        name: "tailwind css",
+        definicion: "Es un framework de css para crear aplicaciones web"
+    },
+    {
+        id: "6",
+        name: "prisma",
+        definicion: "Es un framework de ORM para crear aplicaciones web"
+    },
+]

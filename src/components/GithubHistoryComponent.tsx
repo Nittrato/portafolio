@@ -7,7 +7,7 @@ export function GithubHistoryComponent() {
             <div
                 data-scrollable
                 onWheel={(e) => e.stopPropagation()}
-                className="max-h-80 p-3 flex flex-col overscroll-contain overflow-y-auto scrollbar-none"
+                className="max-h-80 p-3 flex flex-col overscroll-contain overflow-y-auto scrollbar-none scroll-smooth"
             >
                 {githubHistory.map((history, index) => {
                     const isFirst = index === 0;

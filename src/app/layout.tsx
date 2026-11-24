@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
-      <body className="flex flex-row h-screen p-screen gap-screen bg-fondo text-primario relative overflow-hidden">
+      <body className="flex flex-row h-screen p-screen gap-screen bg-fondo text-primario relative">
         <MeshBackground />
         <Navbar />
         {children}
