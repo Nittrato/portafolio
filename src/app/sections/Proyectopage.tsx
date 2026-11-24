@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
+import { span } from "motion/react-m";
 
 export interface ProyectoData {
     id: string;
     name: string;
     lenguajes: string[];
+    porcentaje: number[];
 }
 
 /* este el la pagina [id] de los proyectos, es un tamplate que las paginas siguen */
@@ -20,30 +22,22 @@ export default function ProyectoSection({ project }: { project: ProyectoData }) 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ amount: 0.5 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="flex flex-col w-full h-full bg-fondo2 border-2 border-border rounded-rounded p-10 justify-center items-center gap-6"
+                className="flex flex-row gap-screen flex-1"
             >
-                <div className="flex flex-col items-center gap-3">
+                <main className=" items-center gap-3 bg-card border-2 border-border rounded-rounded flex-1">
                     <span className="text-segundario text-sm uppercase tracking-wider font-semibold">
                         Proyecto #{project.id}
                     </span>
                     <h1 className="text-4xl font-bold capitalize text-primario">
                         {project.name}
                     </h1>
-                </div>
+                </main>
 
-                <div className="flex flex-col items-center gap-2">
+                <main className="flex flex-col items-center gap-2 bg-card border-2 border-border rounded-rounded flex-1">
                     <p className="text-segundario text-sm">Lenguajes:</p>
                     <div className="flex flex-wrap gap-2 justify-center">
-                        {project.lenguajes.map((lang) => (
-                            <span
-                                key={lang}
-                                className="px-3 py-1 bg-fondo border border-border rounded-rounded2 text-sm text-primario font-mono uppercase"
-                            >
-                                {lang}
-                            </span>
-                        ))}
                     </div>
-                </div>
+                </main>
             </motion.main>
         </main>
     );
