@@ -1,17 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Flex&family=JetBrains+Mono:wght@400;700&display=swap");
+
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
 
 body {
-    font-family:
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        sans-serif;
+    font-family: "JetBrains Mono", monospace;
 }
 
 /* Ocultar barra de scroll pero mantener funcionalidad */

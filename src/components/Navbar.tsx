@@ -74,7 +74,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="flex flex-col items-center justify-between p-screen bg-fondo2 rounded-full border-2 border-border shrink-0 overflow-hidden">
+    <nav className="flex flex-col items-center justify-between p-screen bg-fondo2 rounded-rounded border-2 border-border shrink-0 overflow-hidden">
       {/* Logo */}
       <div className="w-18 h-18 bg-primario rounded-full flex items-center justify-center shrink-0">
         <img src="/logo.svg" alt="logo" className="w-8 h-8" />
@@ -164,7 +164,7 @@ function NavTextTab({
       style={{ writingMode: "vertical-rl" }}
     >
       <p
-        className={`text-h3 font-semibold uppercase tracking-widest transition-colors duration-200 ${
+        className={`text-h3 font-sans uppercase tracking-widest transition-colors duration-200 ${
           isActive ? "text-color" : "text-segundario group-hover:text-primario"
         }`}
       >

@@ -24,8 +24,8 @@ const config: Config = {
 				segundario: '#777777',
 			},
 			borderRadius: {
-				rounded: '3rem',
-				rounded2: '2rem',
+				rounded: '3.8rem',
+				rounded2: '2.8rem',
 			},
 			// espacios de pantalla
 			margin: {
@@ -33,26 +33,26 @@ const config: Config = {
 			},
 			padding: {
 				screen: '1.25rem',
-				screen2:"1.50rem"
+				screen2:"2.2rem"
 			},
 			gap: {
 				screen: '1.25rem'
 			},
 			fontFamily: {
-				sans: ['Ios'],
-				pixel: ['Bus'],
+				sans: ['"JetBrains Mono"', 'monospace'],
+				flex: ['Google Sans Flex', 'sans-serif'],
 			},
 			fontSize: {
 				// es un titulo grande
-				h1: '2rem',
+				titulo: '7rem',
 				// es un titulo mediano
-				h2: '1rem',
+				h2: '1.2rem',
 				// es un subtitulo
-				h3: '0.8rem',
+				h3: '1rem',
 				// es un texto normal
-				h4: '0.5rem',
+				h4: '0.9rem',
 				// es un texto pequeño
-				base: '0.3rem',
+				base: '0.7rem',
 			},
 		},
 	},
