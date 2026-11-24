@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "motion/react";
-import {Sticker} from "iconsax-reactjs"
+import { Sticker } from "iconsax-reactjs"
+import { GithubHistoryComponent } from "@/components/GithubHistoryComponent";
 
 export default function Home() {
   return (
-    <section
+    <main
       id="home"
       className="flex w-full h-full border-2
  border-border rounded-rounded snap-start snap-always shrink-0 overflow-hidden"
@@ -33,11 +34,11 @@ export default function Home() {
                 className="w-48 h-48 rounded-[2.2rem] border-2 border-border"
               />
               <div className="flex flex-col justify-between">
-                <h4 className="text-h4">
+                <h3 className="text-h3">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
                   illum optio autem debitis amet expe
-                </h4>
-                <a href="#" className="bg-fondo rounded-full p-1 flex gap-1">
+                </h3>
+                <button onClick={() => window.open("https://unsplash.com/es/@sumaidsingh")} className="bg-fondo rounded-full p-1 flex gap-1">
                   <h3 className="bg-primario flex-1 text-h3 text-center py-3 text-fondo rounded-full">
                     IR A GITHUB
                   </h3>
@@ -45,14 +46,12 @@ export default function Home() {
                   <span className="bg-primario rounded-full p-1.5 w-12 h-12">
                     <img src="/github.svg" />
                   </span>
-                </a>
+                </button>
               </div>
             </div>
 
             {/* github historial */}
-            <div className="bg-fondo2 p-screen flex w-56 h-56">
-              <h3>github history</h3>
-            </div>
+            <GithubHistoryComponent />
 
             {/* Titulo */}
             <div className="w-4xl">
@@ -64,27 +63,31 @@ export default function Home() {
             </div>
           </section>
 
-          
+
           <section className="flex flex-col justify-between items-end">
+
+            {/* copurite */}
             <div className="bg-primario rounded-full py-4 px-6 w-fit text-fondo flex items-center gap-3">
-              <Sticker size="24" variant="Bold"/>
-              <h4 className="text-h4">Imagen de la propiedad de <a href="#" className="text-blue-500 cursor-pointer hover:underline">@yohunru</a></h4>
+              <Sticker size="24" variant="Bold" />
+              <h4 className="text-h4">Imagen de la propiedad de <button onClick={() => window.open("https://unsplash.com/es/fotos/robot-de-pie-sobre-la-roca-con-la-silla-lKVInur89Wg")} className="text-blue-500 cursor-pointer hover:underline">@sumaidsingh</button></h4>
             </div>
+
+            {/* card de skills */}
             <div className="bg-fondo2 backdrop-blur-xl p-screen2 flex flex-col gap-6 w-140 border-2 border-border rounded-rounded2">
-              <h3 className="text-h3">Lenguajes</h3>
+              <h3 className="text-h3 uppercase">Skills</h3>
               <div className="flex flex-wrap gap-2">
-                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h4 className="text-h4 uppercase">react</h4></a>
-                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h4 className="text-h4 uppercase">next js</h4></a>
-                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h4 className="text-h4 uppercase">typescript</h4></a>
-                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h4 className="text-h4 uppercase">react native</h4></a>
-                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h4 className="text-h4 uppercase">sqlite</h4></a>
-                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h4 className="text-h4 uppercase">tailwind css</h4></a>
+                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h3 className="text-h3 uppercase">react</h3></a>
+                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h3 className="text-h3 uppercase">next js</h3></a>
+                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h3 className="text-h3 uppercase">typescript</h3></a>
+                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h3 className="text-h3 uppercase">react native</h3></a>
+                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h3 className="text-h3 uppercase">sqlite</h3></a>
+                <a className="px-7 py-2.5 border-2 border-primario rounded-full"><h3 className="text-h3 uppercase">tailwind css</h3></a>
               </div>
-              <h4 className="text-h4">React <span className="text-segundario">- es un framework para dispositivos multiplataforma en un framework para dispositivos multimedia</span></h4>
+              <h3 className="text-h3">React <span className="text-segundario">- es un framework para dispositivos multiplataforma en un framework para dispositivos multimedia</span></h3>
             </div>
           </section>
         </main>
       </motion.main>
-    </section>
+    </main>
   );
 }

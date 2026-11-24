@@ -8,9 +8,10 @@ export interface ProyectoData {
   lenguajes: string[];
 }
 
+/* este el la pagina [id] de los proyectos, es un tamplate que las paginas siguen */
 export default function ProyectoSection({ project }: { project: ProyectoData }) {
   return (
-    <section
+    <main
       id={`proyecto-${project.id}`}
       className="h-full w-full snap-start snap-always shrink-0 flex"
     >
@@ -44,6 +45,6 @@ export default function ProyectoSection({ project }: { project: ProyectoData }) 
           </div>
         </div>
       </motion.main>
-    </section>
+    </main>
   );
 }

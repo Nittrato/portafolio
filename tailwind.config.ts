@@ -45,14 +45,14 @@ const config: Config = {
 			fontSize: {
 				// es un titulo grande
 				titulo: '7rem',
-				// es un titulo mediano
-				h2: '1.2rem',
-				// es un subtitulo
+				// es un subtitulo usado en el navbar
+				h2: '1.1rem',
+				// es para las cards para texto primario
 				h3: '1rem',
-				// es un texto normal
+				// es un texto segundario
 				h4: '0.9rem',
 				// es un texto pequeño
-				base: '0.7rem',
+				base: '0.8rem',
 			},
 		},
 	},

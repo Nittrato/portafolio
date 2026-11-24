@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export default function Contacto() {
   return (
-    <section
+    <main
       id="contacto"
       className="h-full w-full snap-start snap-always shrink-0 flex"
     >
@@ -19,6 +19,6 @@ export default function Contacto() {
           <h1 className="text-3xl">Contacto page</h1>
         </div>
       </motion.main>
-    </section>
+    </main>
   );
 }

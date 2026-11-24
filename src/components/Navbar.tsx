@@ -46,6 +46,13 @@ export function Navbar() {
     let isScrolling = false;
 
     const handleWheel = (e: WheelEvent) => {
+      // Si el cursor está dentro de cualquier elemento con scroll interno, no cambiar de sección
+      const target = e.target as HTMLElement | null;
+      const scrollableChild = target?.closest(".overflow-y-auto, .overflow-auto, [data-scrollable]");
+      if (scrollableChild && scrollableChild.id !== "scroll-container") {
+        return;
+      }
+
       if (isScrolling || Math.abs(e.deltaY) < 20) return;
 
       const currentIndex = SECTION_IDS.indexOf(activeIdRef.current);
@@ -109,9 +116,8 @@ export function Navbar() {
                     stiffness: 400,
                     damping: 30,
                   }}
-                  className={`w-5 h-5 rounded-lg block ${
-                    isActive ? "bg-primario" : "bg-segundario"
-                  }`}
+                  className={`w-5 h-5 rounded-lg block ${isActive ? "bg-primario" : "bg-segundario"
+                    }`}
                 />
               </button>
             );
@@ -163,13 +169,12 @@ function NavTextTab({
       className="cursor-pointer group"
       style={{ writingMode: "vertical-rl" }}
     >
-      <p
-        className={`text-h3 font-sans uppercase tracking-widest transition-colors duration-200 ${
-          isActive ? "text-color" : "text-segundario group-hover:text-primario"
-        }`}
+      <h2
+        className={`text-h2 font-sans uppercase tracking-widest transition-colors duration-200 ${isActive ? "text-color" : "text-segundario group-hover:text-primario"
+          }`}
       >
         {label}
-      </p>
+      </h2>
     </button>
   );
 }
