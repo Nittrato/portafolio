@@ -17,6 +17,10 @@ body {
     scrollbar-width: none;
 }
 
+.boton {
+    @apply rounded-full p-3.5 items-center justify-center border-2 border-border bg-card;
+}
+
 .anim {
     @apply transition-all duration-200 ease-out hover:-translate-y-1 cursor-pointer;
 }

@@ -26,18 +26,18 @@ export function GithubHistoryComponent() {
 
                                 {/* Línea conectora hacia el siguiente */}
                                 {!isLast && (
-                                    <span className="w-[1.5px] flex-1 min-h-14 bg-segundario/50" />
+                                    <span className="w-[1.5px] flex-1 min-h-12 bg-segundario/50" />
                                 )}
                             </div>
 
                             {/* Contenido */}
                             <div className="flex flex-col pb-5">
-                                <h3 className="text-h3 font-medium text-primario leading-tight">
+                                <h4 className="text-h4 font-medium text-primario leading-tight">
                                     {history.tiempo} <span className="text-segundario">-</span> {history.titulo}
-                                </h3>
-                                <h4 className="text-h4 text-segundario mt-1 leading-snug">
-                                    {history.commit}
                                 </h4>
+                                <p className="text-base text-segundario mt-1 leading-snug">
+                                    {history.commit}
+                                </p>
                             </div>
                         </div>
                     );

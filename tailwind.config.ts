@@ -33,7 +33,7 @@ const config: Config = {
 			},
 			padding: {
 				screen: '1.25rem',
-				screen2:"2.2rem"
+				screen2: "2.2rem"
 			},
 			gap: {
 				screen: '1.25rem'
@@ -45,6 +45,7 @@ const config: Config = {
 			fontSize: {
 				// es un titulo grande
 				titulo: '7rem',
+				h1: '4.5rem',
 				// es un subtitulo usado en el navbar
 				h2: '1.1rem',
 				// es para las cards para texto primario
