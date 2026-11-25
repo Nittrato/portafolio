@@ -19,14 +19,14 @@ export function GithubHistoryComponent() {
                             <div className="flex flex-col items-center">
                                 {/* Nodo / Círculo */}
                                 {isFirst ? (
-                                    <span className="w-3.5 h-3.5 rounded-full bg-color shadow-[0_0_10px_rgba(143,255,98,0.6)] my-1.5" />
+                                    <span className="w-3.5 h-3.5 rounded-full bg-color shadow-[0_0_10px_rgba(143,255,98,0.6)] my-1" />
                                 ) : (
-                                    <span className="w-3.5 h-3.5 rounded-full border-2 border-segundario/50 bg-transparent my-1.5" />
+                                    <span className="w-3.5 h-3.5 rounded-full border-2 border-segundario/50 bg-transparent my-1" />
                                 )}
 
                                 {/* Línea conectora hacia el siguiente */}
                                 {!isLast && (
-                                    <span className="w-[1.5px] flex-1 min-h-12 bg-segundario/50" />
+                                    <span className="w-0.5 flex-1 min-h-14 bg-segundario/50" />
                                 )}
                             </div>
 

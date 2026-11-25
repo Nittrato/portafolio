@@ -2,32 +2,69 @@ export const proyecto = [
     {
         id: "1",
         name: "quiz flag",
-        lenguajes: ["css", "typescript", "next js"],
-        porcentaje: [15, 25, 55]
+        lenguajes: [
+            {
+                name: "css",
+                porcentaje: 15,
+                color: "#9243FE"
+            },
+            {
+                name: "typescript",
+                porcentaje: 25,
+                color: "#5DAEFF"
+            },
+            {
+                name: "next js",
+                porcentaje: 55,
+                color: "#53FF6D"
+            },
+            {
+                name: "otros"
+            }
+        ]
     },
     {
         id: "2",
         name: "flag app",
-        lenguajes: ["css", "typescript", "next js"],
-        porcentaje: [15, 25, 55]
+        lenguajes: [
+            {
+                name: "typescript",
+                porcentaje: 25,
+                color: "#5DAEFF"
+            },
+            {
+                name: "next js",
+                porcentaje: 55,
+                color: "#53FF6D"
+            },
+            {
+                name: "otros"
+            }
+        ]
     },
     {
         id: "3",
         name: "mc donald",
-        lenguajes: ["css", "typescript", "next js"],
-        porcentaje: [15, 25, 55]
-    },
-    {
-        id: "4",
-        name: "entreno app",
-        lenguajes: ["css", "typescript", "next js"],
-        porcentaje: [15, 25, 55]
-    },
-    {
-        id: "5",
-        name: "calculadora",
-        lenguajes: ["css", "typescript", "next js"],
-        porcentaje: [15, 25, 55]
+        lenguajes: [
+            {
+                name: "css",
+                porcentaje: 15,
+                color: "#9243FE"
+            },
+            {
+                name: "typescript",
+                porcentaje: 25,
+                color: "#5DAEFF"
+            },
+            {
+                name: "next js",
+                porcentaje: 55,
+                color: "#53FF6D"
+            },
+            {
+                name: "otros"
+            }
+        ]
     },
 ]
 
